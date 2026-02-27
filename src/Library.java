@@ -23,4 +23,31 @@ public void listBooks() {
         System.out.println(book);
     }
 }
+public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            if (book.borrowBook()) {
+                System.out.println("Borrowed successfully.");
+            } else {
+                System.out.println("Already borrowed.");
+            }
+            return;
+        }
+    }
+    System.out.println("Book not found.");
+}
+
+public void returnBook(String title) {
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            if (book.returnBook()) {
+                System.out.println("Returned successfully.");
+            } else {
+                System.out.println("Was not borrowed.");
+            }
+            return;
+        }
+    }
+    System.out.println("Book not found.");
+}
 }
