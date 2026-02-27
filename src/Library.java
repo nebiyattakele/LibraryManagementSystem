@@ -12,4 +12,15 @@ public class Library {
         books.add(book);
         System.out.println("Added: " + book.getTitle());
     }
+    public void removeBook(String title) {
+    books.removeIf(book -> 
+        book.getTitle().equalsIgnoreCase(title));
+    System.out.println("Book removed if it existed.");
+}
+
+public void listBooks() {
+    for (Book book : books) {
+        System.out.println(book);
+    }
+}
 }
