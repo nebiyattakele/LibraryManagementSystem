@@ -12,4 +12,25 @@ public class Book {
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public boolean isBorrowed() { return isBorrowed; }
+    public boolean borrowBook() {
+    if (!isBorrowed) {
+        isBorrowed = true;
+        return true;
+    }
+    return false;
+}
+
+public boolean returnBook() {
+    if (isBorrowed) {
+        isBorrowed = false;
+        return true;
+    }
+    return false;
+}
+
+@Override
+public String toString() {
+    return title + " by " + author + 
+           (isBorrowed ? " (Borrowed)" : " (Available)");
+}
 }
